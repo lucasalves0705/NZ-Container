@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Spicy Club a Hotels and Restaurants Category Bootstrap responsive Website Template | Home :: w3layouts</title>
+    <title>NZ Container</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="keywords" content="Spicy Club Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
@@ -26,7 +26,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <div class="agileinfo-dot">
     <!-- banner -->
     <div class="banner jarallax">
-        <div class="header">
+        <div class="header bg-dark">
             <div class="container">
                 <nav class="navbar navbar-default">
                     <!-- Brand and toggle get grouped for better mobile display -->
@@ -51,7 +51,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                         <nav>
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html">Home</a></li>
+                                <li class="active"><a href="">Home</a></li>
                                 <li><a href="#about" class="scroll">About</a></li>
                                 <li><a href="#services" class="scroll">Services</a></li>
                                 <li><a href="#menu" class="scroll">Menu</a></li>

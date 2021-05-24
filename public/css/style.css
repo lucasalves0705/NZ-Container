@@ -1,4 +1,4 @@
-/*--A Design by W3layouts 
+/*--A Design by W3layouts
 Author: W3layout
 Author URL: http://w3layouts.com
 License: Creative Commons Attribution 3.0 Unported
@@ -57,7 +57,7 @@ body{
 .agileinfo-social-grids ul li a {
 	color: #FFFFFF;
     text-align: center;
-	
+
 }
 .agileinfo-social-grids ul li a i.fa.fa-facebook,.agileinfo-social-grids ul li a i.fa.fa-twitter,.agileinfo-social-grids ul li a i.fa.fa-rss,.agileinfo-social-grids ul li a i.fa.fa-vk{
     transition: 0.5s all;
@@ -499,7 +499,7 @@ img.img-responsive {
 }
 .blog-info{
     position: relative;
-    overflow: hidden;	
+    overflow: hidden;
 }
 .blog-info a img{
 	width:100%;
@@ -524,7 +524,7 @@ img.img-responsive {
     margin: 0;
 }
 .blog-caption h4 a:hover{
-	color:#daae19;	
+	color:#daae19;
 }
 .blog-caption p{
     color: #d2d2d2;
@@ -608,11 +608,11 @@ img.img-responsive {
 }
 .styled-input.agile-styled-input-top {
     margin-top: 0;
-} 
+}
 .fields-grid {
     margin: 2em 0 0 0;
 }
-.contact input[type="text"],.contact textarea{
+.contact input[type="text"], .contact select, .contact textarea{
     font-size: .9em;
     color: #8c8c8c;
     padding: 0.5em 1em;
@@ -623,17 +623,16 @@ img.img-responsive {
     -webkit-appearance: none;
 	outline: none;
 }
-.contact textarea { 
-	min-height: 150px;
-    resize: none;
-} 
+.contact textarea {
+    min-width: 100%;
+}
 /*-- input-effect --*/
 .styled-input input:focus ~ label, .styled-input input:valid ~ label,.styled-input textarea:focus ~ label ,.styled-input textarea:valid ~ label{
     font-size: .9em;
     color: #333333;
     top: -1.3em;
     -webkit-transition: all 0.125s;
-	-moz-transition: all 0.125s; 
+	-moz-transition: all 0.125s;
 	-o-transition: all 0.125s;
 	-ms-transition: all 0.125s;
     transition: all 0.125s;
@@ -679,18 +678,18 @@ img.img-responsive {
     -moz-transition: all 0.125s;
     transition: all 0.125s;
 }
-.styled-input textarea ~ span { 
-    bottom: 5px; 
+.styled-input textarea ~ span {
+    bottom: 5px;
 }
-.styled-input input:focus.styled-input textarea:focus { 
-	outline: 0; 
-} 
+.styled-input input:focus.styled-input textarea:focus {
+	outline: 0;
+}
 .styled-input input:focus ~ span,.styled-input textarea:focus ~ span {
 	width: 100%;
 	-webkit-transition: all 0.075s;
-	-moz-transition: all 0.075s;  
-	transition: all 0.075s; 
-} 
+	-moz-transition: all 0.075s;
+	transition: all 0.075s;
+}
 /*-- //input-effect --*/
 .contact input[type="submit"] {
     outline: none;
@@ -754,7 +753,7 @@ button.btn1 {
     -ms-transition: 0.5s all;
 }
 button.btn1:hover{
-	background:none;	
+	background:none;
 	border: solid 1px #FFFFFF;
 }
 /*-- //newsletter --*/
@@ -785,7 +784,7 @@ footer {
 	bottom: 20px;
 	right: 2%;
 	overflow: hidden;
-	z-index: 999; 
+	z-index: 999;
 	width: 40px;
 	height: 40px;
 	border: none;
