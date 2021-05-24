@@ -7,32 +7,17 @@
     <meta name="keywords" content="Spicy Club Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
     <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
-    <!-- bootstrap-css -->
-    <link href="{{ asset('assets/css/bootstrap.css')}}" rel="stylesheet" type="text/css" media="all" />
     <!--// bootstrap-css -->
     <!-- css -->
-    <link rel="stylesheet" href="{{ asset('assets/css/style.css')}}" type="text/css" media="all" />
-    <!--// css -->
-    <!-- gallery -->
-    <link type="text/css" rel="stylesheet" href="{{ asset('assets/css/cm-overlay.css') }}" />
-    <!-- //gallery -->
-    <!-- font-awesome icons -->
-    <link href="{{ asset('assets/css/font-awesome.css') }}" rel="stylesheet">
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('css/style.css')}}" type="text/css" media="all" />
+    <link type="text/css" rel="stylesheet" href="{{ asset('css/cm-overlay.css') }}" />
+    <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
     <!-- //font-awesome icons -->
     <!-- font -->
     <link href="//fonts.googleapis.com/css?family=Josefin+Sans:100,100i,300,300i,400,400i,600,600i,700,700i" rel="stylesheet">
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:400,700italic,700,400italic,300italic,300' rel='stylesheet' type='text/css'>
     <!-- //font -->
-    <script src="{{ asset('assets/js/jquery-1.11.1.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.js') }}"></script>
-    <script type="text/javascript">
-        jQuery(document).ready(function($) {
-            $(".scroll").click(function(event){
-                event.preventDefault();
-                $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
-            });
-        });
-    </script>
     <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <![endif]-->
@@ -126,7 +111,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="modal-body">
                 <div class="agileits-w3layouts-info">
-                    <img src="images/2.jpg" alt="" />
+                    <img src="{{ asset('images/2.jpg') }}" alt="" />
                     <p>Duis venenatis, turpis eu bibendum porttitor, sapien quam ultricies tellus, ac rhoncus risus odio eget nunc. Pellentesque ac fermentum diam. Integer eu facilisis nunc, a iaculis felis. Pellentesque pellentesque tempor enim, in dapibus turpis porttitor quis. Suspendisse ultrices hendrerit massa. Nam id metus id tellus ultrices ullamcorper.  Cras tempor massa luctus, varius lacus sit amet, blandit lorem. Duis auctor in tortor sed tristique. Proin sed finibus sem.</p>
                 </div>
             </div>
@@ -201,8 +186,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="w3_tab_img">
                         <div class="col-sm-3 w3_tab_img_left">
                             <div class="demo">
-                                <a class="cm-overlay" href="images/g1.jpg">
-                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="images/g1.jpg" alt=" " class="img-responsive" />
+                                <a class="cm-overlay" href="{{ asset('images/g1.jpg') }}">
+                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{ asset('images/g1.jpg') }}" alt=" " class="img-responsive" />
                                     </figure>
                                 </a>
                             </div>
@@ -213,8 +198,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="col-sm-3 w3_tab_img_left">
                             <div class="demo">
-                                <a class="cm-overlay" href="images/g2.jpg">
-                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="images/g2.jpg" alt=" " class="img-responsive" />
+                                <a class="cm-overlay" href="{{ asset('images/g2.jpg') }}">
+                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{ asset('images/g2.jpg') }}" alt=" " class="img-responsive" />
                                     </figure>
                                 </a>
                             </div>
@@ -225,8 +210,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="col-sm-3 w3_tab_img_left">
                             <div class="demo">
-                                <a class="cm-overlay" href="images/g3.jpg">
-                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="images/g3.jpg" alt=" " class="img-responsive" />
+                                <a class="cm-overlay" href="{{ asset('images/g3.jpg') }}">
+                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{ asset('images/g3.jpg') }}" alt=" " class="img-responsive" />
                                     </figure>
                                 </a>
                             </div>
@@ -237,8 +222,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="col-sm-3 w3_tab_img_left">
                             <div class="demo">
-                                <a class="cm-overlay" href="images/g4.jpg">
-                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="images/g4.jpg" alt=" " class="img-responsive" />
+                                <a class="cm-overlay" href="{{ asset('images/g4.jpg') }}">
+                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{ asset('images/g4.jpg') }}" alt=" " class="img-responsive" />
                                     </figure>
                                 </a>
                             </div>
@@ -396,8 +381,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="col-sm-3 w3_tab_img_left">
                             <div class="demo">
-                                <a class="cm-overlay" href="images/g2.jpg">
-                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="images/g2.jpg" alt=" " class="img-responsive">
+                                <a class="cm-overlay" href="{{ asset('images/g2.jpg') }}">
+                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{ asset('images/g2.jpg') }}" alt=" " class="img-responsive">
                                     </figure>
                                 </a>
                             </div>
@@ -408,8 +393,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                         </div>
                         <div class="col-sm-3 w3_tab_img_left">
                             <div class="demo">
-                                <a class="cm-overlay" href="images/g3.jpg">
-                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="images/g3.jpg" alt=" " class="img-responsive">
+                                <a class="cm-overlay" href="{{ asset('images/g3.jpg') }}">
+                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{ asset('images/g3.jpg') }}" alt=" " class="img-responsive">
                                     </figure>
                                 </a>
                             </div>
@@ -425,8 +410,8 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="w3_tab_img">
                         <div class="col-sm-3 w3_tab_img_left">
                             <div class="demo">
-                                <a class="cm-overlay" href="images/g4.jpg">
-                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="images/g4.jpg" alt=" " class="img-responsive">
+                                <a class="cm-overlay" href="{{ asset('images/g4.jpg') }}">
+                                    <figure class="imghvr-shutter-in-out-diag-2"><img src="{{ asset('images/g4.jpg') }}" alt=" " class="img-responsive">
                                     </figure>
                                 </a>
                             </div>
@@ -440,14 +425,6 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                 </div>
             </div>
         </div>
-        <script src="js/jquery.tools.min.js"></script>
-        <script src="js/jquery.mobile.custom.min.js"></script>
-        <script src="js/jquery.cm-overlay.js"></script>
-        <script>
-            $(document).ready(function(){
-                $('.cm-overlay').cmOverlay();
-            });
-        </script>
     </div>
 </div>
 <!-- //gallery -->
@@ -460,7 +437,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="team-row">
             <div class="col-md-3 team-grids">
                 <div class="team-img">
-                    <img class="img-responsive" src="images/t1.jpg" alt="">
+                    <img class="img-responsive" src="{{ asset('images/t1.jpg') }}" alt="">
                     <div class="captn">
                         <div class="captn-top">
                             <h4>Edwards Doe</h4>
@@ -478,7 +455,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-3 team-grids">
                 <div class="team-img">
-                    <img class="img-responsive" src="images/t2.jpg" alt="">
+                    <img class="img-responsive" src="{{ asset('images/t2.jpg') }}" alt="">
                     <div class="captn">
                         <div class="captn-top">
                             <h4>Mark Sophia</h4>
@@ -496,7 +473,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-3 team-grids">
                 <div class="team-img">
-                    <img class="img-responsive" src="images/t3.jpg" alt="">
+                    <img class="img-responsive" src="{{ asset('images/t3.jpg') }}" alt="">
                     <div class="captn">
                         <div class="captn-top">
                             <h4>Michael amet</h4>
@@ -514,7 +491,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-3 team-grids">
                 <div class="team-img">
-                    <img class="img-responsive" src="images/t4.jpg" alt="">
+                    <img class="img-responsive" src="{{ asset('images/t4.jpg') }}" alt="">
                     <div class="captn">
                         <div class="captn-top">
                             <h4>Daniel Nyari</h4>
@@ -544,7 +521,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="w3-agile-blog-grids">
             <div class="col-md-3 agileits-blog-grid">
                 <div class="blog-info">
-                    <a href="#" data-toggle="modal" data-target="#myModal"><img src="images/b1.jpg" alt=""></a>
+                    <a href="#" data-toggle="modal" data-target="#myModal"><img src="{{ asset('images/b1.jpg') }}" alt=""></a>
                     <div class="blog-caption">
                         <h4><a href="#" data-toggle="modal" data-target="#myModal">Lorem ipsum</a></h4>
                         <p>By <a href="#">Admin</a> on Nov 02, 2016</p>
@@ -553,7 +530,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-3 agileits-blog-grid">
                 <div class="blog-info">
-                    <a href="#" data-toggle="modal" data-target="#myModal"><img src="images/b2.jpg" alt=""></a>
+                    <a href="#" data-toggle="modal" data-target="#myModal"><img src="{{ asset('images/b2.jpg') }}" alt=""></a>
                     <div class="blog-caption">
                         <h4><a href="#" data-toggle="modal" data-target="#myModal">Nulla sit amet</a></h4>
                         <p>By <a href="#">Admin</a> on Dec 16, 2016</p>
@@ -562,7 +539,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-3 agileits-blog-grid">
                 <div class="blog-info">
-                    <a href="#" data-toggle="modal" data-target="#myModal"><img src="images/b3.jpg" alt=""></a>
+                    <a href="#" data-toggle="modal" data-target="#myModal"><img src="{{ asset('images/b3.jpg') }}" alt=""></a>
                     <div class="blog-caption">
                         <h4><a href="#" data-toggle="modal" data-target="#myModal">Vivamus quis</a></h4>
                         <p>By <a href="#">Admin</a> on Nov 24, 2016</p>
@@ -571,7 +548,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
             </div>
             <div class="col-md-3 agileits-blog-grid">
                 <div class="blog-info">
-                    <a href="#" data-toggle="modal" data-target="#myModal"><img src="images/b4.jpg" alt=""></a>
+                    <a href="#" data-toggle="modal" data-target="#myModal"><img src="{{ asset('images/b4.jpg') }}" alt=""></a>
                     <div class="blog-caption">
                         <h4><a href="#" data-toggle="modal" data-target="#myModal">Donec dolor</a></h4>
                         <p>By <a href="#">Admin</a> on Dec 14, 2016</p>
@@ -670,13 +647,19 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
 <footer>
     <div class="container">
         <div class="copyright">
-            <p>© 2017 Spicy Club. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
+            <p>© 2017 Spicy Club. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts </a></p>
         </div>
     </div>
 </footer>
 <!-- //footer -->
-<script src="{{ asset('assets/js/jarallax.js') }}"></script>
-<script src="{{ asset('assets/js/SmoothScroll.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.tools.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.mobile.custom.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jquery.cm-overlay.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/jarallax.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/responsiveslides.min.js') }}"></script>
+<script type="text/javascript" src="{{ asset('js/app.js') }}"></script>
 <script type="text/javascript">
     /* init Jarallax */
     $('.jarallax').jarallax({
@@ -684,24 +667,16 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         imgWidth: 1366,
         imgHeight: 768
     })
-</script>
-<script src="{{ asset('assets/js/responsiveslides.min.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/move-top.js') }}"></script>
-<script type="text/javascript" src="{{ asset('assets/js/easing.js') }}"></script>
-<!-- here stars scrolling icon -->
-<script type="text/javascript">
-    $(document).ready(function() {
-        /*
-            var defaults = {
-            containerID: 'toTop', // fading element id
-            containerHoverID: 'toTopHover', // fading element hover id
-            scrollSpeed: 1200,
-            easingType: 'linear'
-            };
-        */
+
+    jQuery(document).ready(function($) {
+        $(".scroll").click(function(event){
+            event.preventDefault();
+            $('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+        });
 
         $().UItoTop({ easingType: 'easeOutQuart' });
 
+        $('.cm-overlay').cmOverlay();
     });
 </script>
 <!-- //here ends scrolling icon -->
