@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,7 +14,15 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::resourceVerbs([
+    'create' => 'criar',
+    'edit' => 'editar',
+]);
+
 Route::get('/', function () {
     return view('index');
 });
-Route::view('/produto/novo', 'products/form');
+Route::resource('/produto', ProductController::class)
+    ->parameters(['produto' => 'product'])
+    ->names('product');
+

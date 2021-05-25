@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Categorie;
+use App\Models\Event;
 use App\Models\Product;
 use App\Models\Status;
 use App\Repositories\Contracts\ProductRepositoryInterface;
@@ -12,12 +14,12 @@ use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
 {
-    protected $repository;
-
-    public function __construct(ProductRepositoryInterface $repository)
-    {
-        $this->repository = $repository;
-    }
+//    protected $repository;
+//
+//    public function __construct(ProductRepositoryInterface $repository)
+//    {
+//        $this->repository = $repository;
+//    }
 
     /**
      * Display a listing of the resource.
@@ -27,41 +29,45 @@ class ProductController extends Controller
     public function index()
     {
         $products = Product::all();
+        $categories = Categorie::all();
 
-        return view('products.index', compact('products'));
+        return view('products.index', compact('products', 'categories'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Http\RedirectResponse
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\RedirectResponse
      */
-    public function create(Request $request)
+    public function create()
     {
-        if (!$this->repository-validator($request->all())) {
-            return redirect()->back();
-        }
+        $categories = Categorie::all();
+        $events = Event::all();
 
-        $product = new Product($request->all());
-
-        return $product;
+        return view('products.form', compact('categories', 'events'));
     }
 
     /**
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function store(Request $request)
     {
-        // validar permissão
 
-        // enviar solicitação para repository
-        $response = $this->repository->save($request->all());
+        if($request->get('id')){
+            $product = Product::query()->find($request->id);
+        }else {
+            $product = new Product();
+        }
+        $product->fill($request->all());
 
-        // retornar de acordo
-        return view(   '');
+        $product->status_id = $request->has('status_id')?1:2;
+
+        $product->save();
+
+        return redirect()->route('product.index');
     }
 
     /**
@@ -79,11 +85,14 @@ class ProductController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Product $product)
     {
-        //
+        $categories = Categorie::all();
+        $events = Event::all();
+
+        return view('products.form', compact('product', 'categories', 'events'));
     }
 
     /**

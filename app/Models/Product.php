@@ -12,8 +12,11 @@ class Product extends Model
     protected $table = 'products';
     protected $fillable = [
         'name',
-        'description',
         'price',
+        'description',
+        'status_id',
+        'product_event_id',
+        'category_id'
     ];
 
     public function status()
@@ -25,8 +28,14 @@ class Product extends Model
     {
         return $this->belongsTo(Event::class);
     }
+
     public function category()
     {
         return $this->belongsTo(Categorie::class);
+    }
+
+    public function setPriceAttribute($value)
+    {
+        $this->attributes['price'] = (float)str_replace(',', '.', $value);
     }
 }
