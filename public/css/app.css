@@ -2,16 +2,29 @@
     position: relative;
 }
 
+.box-edit-img-product{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
 .edit-img-product{
-    width: auto;
+    max-width: 30%;
+}
+
+.edit-img-product img{
+    max-width: 100%;
+    background-color: lightgray;
 }
 
 .edit-img-product-span{
     color: #ddd;
-    display: block;
-    position: absolute;
-    left: calc(50% - 28px);
-    bottom: 0;
-    z-index: 10;
+    padding: 3px 0;
+    cursor: pointer;
     background: #4a5568;
+    display: block;
 }
+
+.edit-img-product input{
+    display: none;
+}
+

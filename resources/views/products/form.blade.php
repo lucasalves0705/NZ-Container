@@ -7,19 +7,20 @@
             <h3>Novo Produto</h3>
         </div>
         <div class="contact-form">
-            <h4>criar novo produto</h4>
+            <h4>@isset($product)alterar @else criar novo @endif produto</h4>
             <form action="{{ route('product.store') }}" method="post" id="formProduct" enctype="multipart/form-data">
                 @csrf
-                <div class="img-responsive text-center img-product">
-                    @if($product->images != null)
-                            <div class="edit-img-product">
-                                <img src="{{ asset('storage/'.$product->images->first()->path) }}" alt="{{ $product->description }}" title="{{ $product->name }}">
-                                <span class="edit-img-product-span">Editar <i class="fa fa-edit"></i></span>
-                            </div>
+                <div class="img-responsive text-center img-product box-edit-img-product">
+                    @isset($product->images)
+                        <div class="edit-img-product">
+                            <img src="{{ asset('storage/'.$product->images->first()->path) }}" alt="{{ $product->description }}" title="{{ $product->name }}">
+                            <label class="edit-img-product-span" for="image">Editar <i class="fa fa-edit"></i></label>
+                            <input type="file" class="form-control-file" name="image" id="image">
+                        </div>
                     @else
-                        <label for="exampleFormControlFile1">Inserir imagem</label>
+                        <label for="image">Inserir imagem</label>
                         <input type="file" class="form-control-file" name="image" id="image">
-                    @endif
+                    @endisset
                 </div>
                 <input type="hidden" name="id" required minlength="2" value="{{ $product->id ?? '' }}" />
                 <div class="fields-grid">
@@ -71,16 +72,11 @@
                     <div class="clearfix"> </div>
                 </div>
                 <div class="row justify-content-center">
-                    <div class="col-md-10">
+                    <div>
                         @if(isset($product))
                             <input type="submit" id="alterar" value="Alterar">
                         @else
                             <input type="submit" id="criar" value="Criar">
-                        @endif
-                    </div>
-                    <div class="col-md-2">
-                        @if(isset($product))
-                            <input type="button" id="delete" value="Apagar">
                         @endif
                     </div>
                 </div>
