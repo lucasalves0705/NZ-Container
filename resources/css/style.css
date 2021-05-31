@@ -613,7 +613,7 @@ img.img-responsive {
     margin: 2em 0 0 0;
 }
 .contact input[type="text"], .contact select, .contact textarea{
-    font-size: .9em;
+    font-size: 1.1em;
     color: #8c8c8c;
     padding: 0.5em 1em;
     border: 0;
@@ -691,7 +691,7 @@ img.img-responsive {
 	transition: all 0.075s;
 }
 /*-- //input-effect --*/
-.contact input[type="submit"] {
+.contact input[type="submit"], .contact input[type="button"] {
     outline: none;
     color: #000000;
     padding: .8em 3em;
@@ -707,7 +707,7 @@ img.img-responsive {
     -ms-transition: 0.5s all;
     transition: 0.5s all;
 }
-.contact input[type="submit"]:hover {
+.contact input[type="submit"]:hover, .contact input[type="button"]:hover {
     background: #daae19;
     color: #ffffff;
     border: 1px solid #daae19;

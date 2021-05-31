@@ -21,7 +21,14 @@ Route::resourceVerbs([
 
 Route::get('/', function () {
     return view('index');
-});
+})->name('home');
+
+Route::get('/produtos', function () {
+    return redirect()->route('product.index');
+})->name('products');
+
+Route::get('produtos/{category}', [ProductController::class, 'productCategory'])->name('productCategory');
+
 Route::resource('/produto', ProductController::class)
     ->parameters(['produto' => 'product'])
     ->names('product');

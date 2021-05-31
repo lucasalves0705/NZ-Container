@@ -11,6 +11,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
     <!-- css -->
     <link rel="stylesheet" href="{{ asset('css/bootstrap.css')}}" type="text/css" media="all" />
     <link rel="stylesheet" href="{{ asset('css/style.css')}}" type="text/css" media="all" />
+    <link rel="stylesheet" href="{{ asset('css/app.css')}}" type="text/css" media="all" />
     <link type="text/css" rel="stylesheet" href="{{ asset('css/cm-overlay.css') }}" />
     <link href="{{ asset('css/font-awesome.css') }}" rel="stylesheet">
     <!-- //font-awesome icons -->
@@ -52,9 +53,9 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                         <nav>
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="index.html">Home</a></li>
-                                <li><a href="#about" class="scroll">About</a></li>
-                                <li><a href="#services" class="scroll">Services</a></li>
+                                <li class="active"><a href="{{ route('home') }}">Inicio</a></li>
+                                <li><a href="{{ route('products') }}" class="scroll">Produtos</a></li>
+                                <li><a href="#services" class="scroll">Mesas</a></li>
                                 <li><a href="#menu" class="scroll">Menu</a></li>
                                 <li><a href="#team" class="scroll">Team</a></li>
                                 <li><a href="#blog" class="scroll">Blog</a></li>

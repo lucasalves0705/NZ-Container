@@ -21,7 +21,7 @@ class Product extends Model
 
     public function status()
     {
-        return $this->belongsTo(Status::class);
+        return $this->belongsTo(Status::class, 'status_id', 'id');
     }
 
     public function event()
@@ -31,7 +31,11 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongsTo(Categorie::class);
+        return $this->belongsTo(Category::class);
+    }
+
+    public function images(){
+        return $this->hasMany(Image::class);
     }
 
     public function setPriceAttribute($value)

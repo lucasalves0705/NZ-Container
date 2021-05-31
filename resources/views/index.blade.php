@@ -51,13 +51,13 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
                     <div class="collapse navbar-collapse nav-wil" id="bs-example-navbar-collapse-1">
                         <nav>
                             <ul class="nav navbar-nav">
-                                <li class="active"><a href="">Home</a></li>
-                                <li><a href="#about" class="scroll">About</a></li>
-                                <li><a href="#services" class="scroll">Services</a></li>
+                                <li class="active"><a href="{{ route('home') }}">Inicio</a></li>
+                                <li><a href="{{ route('products') }}">Produtos</a></li>
+                                <li><a href="#services" class="scroll">Mesas</a></li>
                                 <li><a href="#menu" class="scroll">Menu</a></li>
                                 <li><a href="#team" class="scroll">Team</a></li>
                                 <li><a href="#blog" class="scroll">Blog</a></li>
-                                <li><a href="#mail" class="scroll">Mail Us</a></li>
+                                <li><a href="#mail" class="scroll">Login</a></li>
                             </ul>
                         </nav>
                     </div>
@@ -68,7 +68,7 @@ Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, Sony
         <div class="w3layouts-banner-info">
             <div class="container">
                 <div class="agileits-logo">
-                    <h1><a href="index.html">Spicy Club</a></h1>
+                    <h1><a href="index.html">NZ Container</a></h1>
                     <p>Donec vel viverra nibh. Ut laoreet ac nisl sit amet vehicula.</p>
                 </div>
             </div>

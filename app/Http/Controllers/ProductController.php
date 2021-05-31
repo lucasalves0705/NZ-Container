@@ -3,13 +3,17 @@
 namespace App\Http\Controllers;
 
 use App\Models\Categorie;
+use App\Models\Category;
 use App\Models\Event;
+use App\Models\Image;
 use App\Models\Product;
 use App\Models\Status;
 use App\Repositories\Contracts\ProductRepositoryInterface;
 use App\Repositories\ProductRepository;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
 use Illuminate\Validation\Rule;
 
 class ProductController extends Controller
@@ -28,10 +32,22 @@ class ProductController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
-        $categories = Categorie::all();
+        $products = Product::query()->orderBy('name')->paginate(4);
+        $categories = Category::all();
 
         return view('products.index', compact('products', 'categories'));
+    }
+
+    public function productCategory(Category $category)
+    {
+        DB::enableQueryLog();
+        $products = $category->products()->paginate(4);
+        $categoryActive = $category->description;
+
+        $categories = Category::all();
+        //$category->slug = Str::slug($request->descriptoin);
+
+        return view('products.index', compact('products', 'categories', 'categoryActive'));
     }
 
     /**
@@ -41,7 +57,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        $categories = Categorie::all();
+        $categories = Category::all();
         $events = Event::all();
 
         return view('products.form', compact('categories', 'events'));
@@ -55,7 +71,6 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-
         if($request->get('id')){
             $product = Product::query()->find($request->id);
         }else {
@@ -66,6 +81,20 @@ class ProductController extends Controller
         $product->status_id = $request->has('status_id')?1:2;
 
         $product->save();
+
+        if($request->hasFile('image')){
+            $imageName = $request->file('image')->store('public/products');
+
+            if($imageName != false){
+                $imageName = str_replace('public/', '', $imageName);
+
+                $image = new Image();
+                $image->path = $imageName;
+                $image->product_id = $product->id;
+
+                $image->save();
+            }
+        }
 
         return redirect()->route('product.index');
     }
@@ -89,7 +118,7 @@ class ProductController extends Controller
      */
     public function edit(Product $product)
     {
-        $categories = Categorie::all();
+        $categories = Category::all();
         $events = Event::all();
 
         return view('products.form', compact('product', 'categories', 'events'));
@@ -111,10 +140,12 @@ class ProductController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Product  $product
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Product $product)
     {
-        //
+        $product->delete();
+
+        return redirect()->route('product.index');
     }
 }

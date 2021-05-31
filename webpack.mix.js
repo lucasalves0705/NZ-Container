@@ -19,3 +19,4 @@ mix.copy('node_modules/jquery/dist/jquery.min.js', 'public/js');
 mix.copy('node_modules/bootstrap/dist/js/bootstrap.bundle.min.js', 'public/js');
 mix.copyDirectory('resources/fonts', 'public/fonts');
 mix.copyDirectory('resources/images', 'public/images');
+mix.sass('resources/scss/style.scss', 'public/css/styles.css')
