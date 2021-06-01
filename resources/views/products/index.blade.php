@@ -4,7 +4,7 @@
     <div class="gallery" id="menu">
         <div class="container">
             <div class="w3l-heading">
-                <h3>Lista de Produtos</h3>
+                <h3>Lista de Produtos</h3><a href="{{ route('product.create') }}"><i class="fa fa-plus-circle fa-2x btn-add-product"></i></a>
             </div>
             <div class="bs-example bs-example-tabs" role="tabpanel" data-example-id="togglable-tabs">
                 <ul id="myTab" class="nav nav-tabs" role="tablist">
@@ -22,8 +22,11 @@
                                     class="active"
                                 @endif
                             ><a href="{{ route('productCategory', ['category' => $category->slug]) }}" role="tab" id="learning-tab" data-toggle="tab" aria-controls="learning">{{ $category->description }}</a></li>
-
                     @endforeach
+                    <li class="li-add-category">
+                        <a href="{{ route('category.create') }}"><i class="fa fa-plus btn-add-category"></i></a>
+                    </li>
+
                 </ul>
                 <div id="myTabContent" class="tab-content">
                     <div role="tabpanel" class="tab-pane fade in active" id="home-main" aria-labelledby="home-tab">

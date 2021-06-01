@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Spicy Club a Hotels and Restaurants Category Bootstrap responsive Website Template | Home :: w3layouts</title>
+    <title>NZ Container</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="utf-8">
     <meta name="keywords" content="Spicy Club Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,

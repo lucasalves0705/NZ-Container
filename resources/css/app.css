@@ -28,3 +28,30 @@
     display: none;
 }
 
+.li-add-category a{
+    border: none!important;
+}
+
+.btn-add-product{
+    margin-top: 15px;
+    float: right;
+}
+
+.btn-add-category, .btn-add-product{
+    color: #000;
+    cursor: pointer;
+}
+
+.creat-category{
+    padding-bottom: 0;
+}
+
+.input-create-category{
+    margin-top: 10px;
+    margin-left: 15%;
+    margin-right: 20px;
+}
+
+.btn-create-category{
+    margin: 0!important;
+}

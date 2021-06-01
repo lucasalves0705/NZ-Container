@@ -644,7 +644,7 @@ img.img-responsive {
     float: left;
 }
 .styled-input:nth-child(1),.styled-input:nth-child(3){
-	margin-left:0;
+
 }
 .textarea-grid{
 	float:none !important;
@@ -1065,3 +1065,5 @@ footer {
 	}
 }
 /*-- //responsive --*/
+
+/* BOOTSTRAP */
