@@ -35,7 +35,7 @@
                                 <div class="col-sm-3 w3_tab_img_left">
                                     <a class="cm-overlay" href="{{ route('product.edit', ['product' => $product->id]) }}">
                                         <div class="demo">
-                                               <figure class="imghvr-shutter-in-out-diag-2"><img src="{{ $product->images->count() > 0 ? asset('storage/'.$product->images->first()->path) : ' ' }}" alt="{{ $product->description }}" class="img-responsive" />
+                                               <figure class="imghvr-shutter-in-out-diag-2"><img src="{{ $product->images->count() > 0 ? asset('storage/'.$product->images->first()->path) : 'storage/products/sem_img.png' }}" alt="{{ $product->description }}" class="img-responsive" />
                                                </figure>
                                         </div>
                                         <div class="agile-gallery-info">

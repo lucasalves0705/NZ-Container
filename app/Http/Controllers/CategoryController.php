@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Str;
+use Illuminate\Validation\Rule;
 
 class CategoryController extends Controller
 {
@@ -15,20 +18,19 @@ class CategoryController extends Controller
     public function index()
     {
         $categories = Category::all();
+        $category = new Category();
 
-        return view('categories.index', compact('categories'));
+        return view('categories.index', compact('categories', 'category'));
     }
 
     /**
      * Show the form for creating a new resource.
      *
-     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function create()
     {
-        $categories = Category::all();
-
-        return view('categories.index', compact('categories'));
+        return redirect()->route('category.index');
     }
 
     /**
@@ -39,14 +41,33 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
+        $validator = Validator::make(
+            $request->all(),
+            [
+                'description' => [
+                    'required',
+                    Rule::unique((new Category())->getTable(), 'description')
+                ],
+            ],
+            [
+                'description.required' => "Campo descrição e obrigatório",
+            ]
+        );
+
+        if ($validator->fails()) {
+            return redirect()->back()->withErrors($validator->errors());
+        }
+
+
         if($request->get('id')){
             $category = Category::query()->find($request->id);
         }else {
             $category = new Category();
         }
-        $category->fill($request->all());
 
-        dd($request,$category);
+        $category->description = $request->get('description');
+        $category->slug = Str::slug($category->description);
+
 
         $category->save();
 
@@ -68,11 +89,14 @@ class CategoryController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Contracts\Foundation\Application|\Illuminate\Contracts\View\Factory|\Illuminate\Contracts\View\View|\Illuminate\Http\Response
      */
     public function edit(Category $category)
     {
-        //
+        $category = Category::query()->find($category->id);
+        $categories = Category::all();
+
+        return view('categories.index', compact('categories', $category));
     }
 
     /**
@@ -91,10 +115,12 @@ class CategoryController extends Controller
      * Remove the specified resource from storage.
      *
      * @param  \App\Models\Category  $category
-     * @return \Illuminate\Http\Response
+     * @return \Illuminate\Http\RedirectResponse
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+
+        return redirect()->route('category.index');
     }
 }

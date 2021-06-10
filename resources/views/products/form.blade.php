@@ -11,7 +11,8 @@
             <form action="{{ route('product.store') }}" method="post" id="formProduct" enctype="multipart/form-data">
                 @csrf
                 <div class="img-responsive text-center img-product box-edit-img-product">
-                    @isset($product->images)
+
+                    @isset($product->images->first()->path)
                         <div class="edit-img-product">
                             <img src="{{ asset('storage/'.$product->images->first()->path) }}" alt="{{ $product->description }}" title="{{ $product->name }}">
                             <label class="edit-img-product-span" for="image">Editar <i class="fa fa-edit"></i></label>

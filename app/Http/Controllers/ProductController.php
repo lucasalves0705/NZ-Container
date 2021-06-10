@@ -45,7 +45,6 @@ class ProductController extends Controller
         $categoryActive = $category->description;
 
         $categories = Category::all();
-        //$category->slug = Str::slug($request->descriptoin);
 
         return view('products.index', compact('products', 'categories', 'categoryActive'));
     }

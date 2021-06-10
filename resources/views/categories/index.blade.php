@@ -17,7 +17,8 @@
                             <div class="fields-grid">
                                 <div class="row justify-content-center">
                                     <div class="styled-input agile-styled-input-top col-7 input-create-category">
-                                        <input type="text" name="name" required id="name" value="">
+                                        <input type="text" name="description" required id="name" value="{{ $category != null ? $category->description : ' ' }}">
+                                        <input type="hidden" name="id" required id="id" value="{{ $category != null ? $category->id : ' ' }}">
                                         <label for="name">Nome</label>
                                         <span></span>
                                     </div>
@@ -38,11 +39,10 @@
                 <ul id="myTab" class="nav nav-tabs" role="tablist">
                     @foreach($categories as $category)
 
-                        <li role="presentation"
-                            @if(isset($categoryActive) && $categoryActive == $category->description)
-                            class="active"
-                            @endif
-                        ><a href="{{ route('productCategory', ['category' => $category->slug]) }}" role="tab" id="learning-tab" data-toggle="tab" aria-controls="learning">{{ $category->description }}</a></li>
+                        <li role="presentation">
+                            <a href="{{ route('category.edit', ['category' => $category->slug]) }}" role="tab" id="learning-tab" data-toggle="tab" aria-controls="learning">{{ $category->description }}</a>
+                            <a href="{{ route('category.destroy', ['category' => $category->id]) }}" class="category-delete-link"><i class="fa fa-trash" id="category-delete"></i></a>
+                        </li>
                     @endforeach
                 </ul>
             </div>

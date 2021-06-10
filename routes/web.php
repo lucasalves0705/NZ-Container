@@ -18,6 +18,7 @@ use Illuminate\Support\Facades\Route;
 Route::resourceVerbs([
     'create' => 'criar',
     'edit' => 'editar',
+    'destroy' => 'deletar'
 ]);
 
 Route::get('/', function () {
