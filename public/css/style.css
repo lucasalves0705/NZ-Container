@@ -638,7 +638,7 @@ img.img-responsive {
     transition: all 0.125s;
 }
 .styled-input {
-	width: 49%;
+	width: 48%;
     margin: 2em 0 1em 1em;
     position: relative;
     float: left;
@@ -1075,6 +1075,6 @@ footer {
 }
 
 .category-delete-link:hover{
-    background: #aaaaaa!important;
-    border-radius: 0 0 3px 3px!important;
+    /*background: #aaaaaa!important;*/
+    /*border-radius: 0 0 3px 3px!important;*/
 }

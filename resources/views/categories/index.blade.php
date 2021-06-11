@@ -41,7 +41,13 @@
 
                         <li role="presentation">
                             <a href="{{ route('category.edit', ['category' => $category->slug]) }}" role="tab" id="learning-tab" data-toggle="tab" aria-controls="learning">{{ $category->description }}</a>
-                            <a href="{{ route('category.destroy', ['category' => $category->id]) }}" class="category-delete-link"><i class="fa fa-trash" id="category-delete"></i></a>
+                            <form action="{{ route('category.destroy', ['category' => $category->slug]) }}" method="post">
+                                @csrf
+                                @method("DELETE")
+                                <button type="submit" class="d-block category-delete-link">
+                                    <i class="fa fa-trash" id="category-delete"></i>
+                                </button>
+                            </form>
                         </li>
                     @endforeach
                 </ul>

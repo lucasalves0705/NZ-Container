@@ -58,8 +58,9 @@ class ProductController extends Controller
     {
         $categories = Category::all();
         $events = Event::all();
+        $product = new Product();
 
-        return view('products.form', compact('categories', 'events'));
+        return view('products.form', compact('categories', 'events', 'product'));
     }
 
     /**
